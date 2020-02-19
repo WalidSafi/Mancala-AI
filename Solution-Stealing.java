@@ -1,49 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package man;
 
-
-
-/*
-1
-0
-4 4 4 4 4 4
-0
-4 4 4 4 4 4
-
-2
-0
-4 4 4 4 4 4
-0
-4 4 4 4 4 4
-
-1
-0
-8 1 3 3 1 0
-0
-4 4 4 4 4 4
-
-
-1
-0
-1 0 0 0 0 0
-0
-4 4 4 4 4 4
-
-
-1
-0
-0 1 0 0 0 0
-0
-4 4 4 4 4 4
-
-ting86095@gmail.com
-
-
-*/
 import java.util.*;
 
 public class Solution {
@@ -53,7 +10,7 @@ public class Solution {
         int yours[] = player1Marbles;
         int opp[] = player2Marbles;
 
-        CheckMoves(yours,opp); // not really needed but i dont want to change it
+        CheckMoves(yours,opp); 
         
         return;
     }
@@ -91,11 +48,9 @@ public class Solution {
             
             if(StealMarbles(yours,opp,i) == true){
                int k = i;
-               //System.out.println(k + "      " + i);
                while(k <= i && k > 0){
                    k--;  
                    if(yours[k] == i-k){
-                       //System.out.println("Stolen from hole: " + k + " Into hole: " + i);  
                        scores[k] = scores[i] + 4;
                    }
                }
@@ -106,10 +61,7 @@ public class Solution {
         for (int i = 0; i < scores.length; i++) {            
                 max = scores[i] > scores[max] ? i : max; //Determines the index of the max element in the array           
             }
-       
-        //for(int i = 0; i <5; i++){
-            //System.out.println(scores[i]);
-       // }
+
 
         System.out.println(max+1);
         return;
